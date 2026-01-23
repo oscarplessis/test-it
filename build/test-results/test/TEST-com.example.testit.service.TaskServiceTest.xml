@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.testit.service.UserServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-01-23T16:27:47.293Z" hostname="oscar-Katana-GF66-11UG" time="0.676">
+<testsuite name="com.example.testit.service.TaskServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-01-23T16:50:37.681Z" hostname="oscar-Katana-GF66-11UG" time="0.728">
   <properties/>
-  <testcase name="testUserService()" classname="com.example.testit.service.UserServiceTest" time="0.676"/>
+  <testcase name="testUserService()" classname="com.example.testit.service.TaskServiceTest" time="0.728"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (/home/oscar/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.10/90ed94ac044ea8953b224304c762316e91fd6b31/byte-buddy-agent-1.14.10.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning

@@ -14,7 +14,7 @@ import java.util.Optional;
 
 import static org.mockito.ArgumentMatchers.any;
 
-public class UserServiceTest {
+public class TaskServiceTest {
 
     TaskService taskService;
     TaskRepository taskRepository;
