@@ -55,6 +55,12 @@ class TaskControllerTest {
     }
 
     @Test
+    void getAllTasks_shouldReturnError401() throws Exception {
+        mockMvc.perform(get("/tasks"))
+                .andExpect(status().isUnauthorized());
+    }
+
+    @Test
     void createTask_shouldCreateTask() throws Exception {
         String taskJson = """
             {

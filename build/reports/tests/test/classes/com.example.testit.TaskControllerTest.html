@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">3</div>
+<div class="counter">4</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.030s</div>
+<div class="counter">1.035s</div>
 <p>duration</p>
 </div>
 </td>
@@ -82,17 +82,22 @@
 </thead>
 <tr>
 <td class="success">createTask_shouldCreateTask()</td>
-<td class="success">0.732s</td>
+<td class="success">0.741s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getAllTasks_shouldReturnEmptyList_initially()</td>
-<td class="success">0.123s</td>
+<td class="success">0.117s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getAllTasks_shouldReturnError401()</td>
+<td class="success">0.007s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getTasksByUser_shouldReturnUserTasks()</td>
-<td class="success">0.175s</td>
+<td class="success">0.170s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -100,8 +105,8 @@
 <div class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>11:26:58.908 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.testit.TaskControllerTest]: TaskControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-11:26:58.972 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.testit.TestItApplication for test class com.example.testit.TaskControllerTest
+<pre>11:30:21.076 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.testit.TaskControllerTest]: TaskControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:30:21.129 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.testit.TestItApplication for test class com.example.testit.TaskControllerTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -111,70 +116,74 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.0)
 
-2026-02-16T11:26:59.213+01:00  INFO 23881 --- [    Test worker] com.example.testit.TaskControllerTest    : Starting TaskControllerTest using Java 21.0.10 with PID 23881 (started by oscar in /home/oscar/Documents/5A/Polytech/fullstack_tests/test-it)
-2026-02-16T11:26:59.215+01:00  INFO 23881 --- [    Test worker] com.example.testit.TaskControllerTest    : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2026-02-16T11:26:59.628+01:00  INFO 23881 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-02-16T11:26:59.659+01:00  INFO 23881 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 2 JPA repository interfaces.
-2026-02-16T11:26:59.940+01:00  INFO 23881 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-02-16T11:27:00.074+01:00  INFO 23881 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
-2026-02-16T11:27:00.076+01:00  INFO 23881 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-02-16T11:27:00.132+01:00  INFO 23881 --- [    Test worker] liquibase.database                       : Set default schema name to PUBLIC
-2026-02-16T11:27:00.459+01:00  INFO 23881 --- [    Test worker] liquibase.changelog                      : Creating database history table with name: PUBLIC.DATABASECHANGELOG
-2026-02-16T11:27:00.517+01:00  INFO 23881 --- [    Test worker] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
-2026-02-16T11:27:00.573+01:00  INFO 23881 --- [    Test worker] liquibase.lockservice                    : Successfully acquired change log lock
-2026-02-16T11:27:00.574+01:00  INFO 23881 --- [    Test worker] liquibase.command                        : Using deploymentId: 1237620574
-2026-02-16T11:27:00.575+01:00  INFO 23881 --- [    Test worker] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2026-02-16T11:30:21.369+01:00  INFO 24464 --- [    Test worker] com.example.testit.TaskControllerTest    : Starting TaskControllerTest using Java 21.0.10 with PID 24464 (started by oscar in /home/oscar/Documents/5A/Polytech/fullstack_tests/test-it)
+2026-02-16T11:30:21.370+01:00  INFO 24464 --- [    Test worker] com.example.testit.TaskControllerTest    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2026-02-16T11:30:21.745+01:00  INFO 24464 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-16T11:30:21.780+01:00  INFO 24464 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 2 JPA repository interfaces.
+2026-02-16T11:30:22.045+01:00  INFO 24464 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-16T11:30:22.158+01:00  INFO 24464 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-02-16T11:30:22.161+01:00  INFO 24464 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-02-16T11:30:22.197+01:00  INFO 24464 --- [    Test worker] liquibase.database                       : Set default schema name to PUBLIC
+2026-02-16T11:30:22.512+01:00  INFO 24464 --- [    Test worker] liquibase.changelog                      : Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2026-02-16T11:30:22.580+01:00  INFO 24464 --- [    Test worker] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2026-02-16T11:30:22.639+01:00  INFO 24464 --- [    Test worker] liquibase.lockservice                    : Successfully acquired change log lock
+2026-02-16T11:30:22.639+01:00  INFO 24464 --- [    Test worker] liquibase.command                        : Using deploymentId: 1237822639
+2026-02-16T11:30:22.640+01:00  INFO 24464 --- [    Test worker] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
 Running Changeset: db/changelog/001-create-users-table.xml::001::testit
-2026-02-16T11:27:00.602+01:00  INFO 23881 --- [    Test worker] liquibase.changelog                      : Table users created
-2026-02-16T11:27:00.602+01:00  INFO 23881 --- [    Test worker] liquibase.changelog                      : ChangeSet db/changelog/001-create-users-table.xml::001::testit ran successfully in 7ms
+2026-02-16T11:30:22.665+01:00  INFO 24464 --- [    Test worker] liquibase.changelog                      : Table users created
+2026-02-16T11:30:22.666+01:00  INFO 24464 --- [    Test worker] liquibase.changelog                      : ChangeSet db/changelog/001-create-users-table.xml::001::testit ran successfully in 7ms
 Running Changeset: db/changelog/002-create-task-table.xml::002::testit
-2026-02-16T11:27:00.613+01:00  INFO 23881 --- [    Test worker] liquibase.changelog                      : Table task created
-2026-02-16T11:27:00.614+01:00  INFO 23881 --- [    Test worker] liquibase.changelog                      : Sequence task_seq created
-2026-02-16T11:27:00.614+01:00  INFO 23881 --- [    Test worker] liquibase.changelog                      : ChangeSet db/changelog/002-create-task-table.xml::002::testit ran successfully in 4ms
-2026-02-16T11:27:00.618+01:00  INFO 23881 --- [    Test worker] liquibase.util                           : UPDATE SUMMARY
-2026-02-16T11:27:00.618+01:00  INFO 23881 --- [    Test worker] liquibase.util                           : Run:                          2
-2026-02-16T11:27:00.618+01:00  INFO 23881 --- [    Test worker] liquibase.util                           : Previously run:               0
-2026-02-16T11:27:00.618+01:00  INFO 23881 --- [    Test worker] liquibase.util                           : Filtered out:                 0
-2026-02-16T11:27:00.618+01:00  INFO 23881 --- [    Test worker] liquibase.util                           : -------------------------------
-2026-02-16T11:27:00.618+01:00  INFO 23881 --- [    Test worker] liquibase.util                           : Total change sets:            2
-2026-02-16T11:27:00.619+01:00  INFO 23881 --- [    Test worker] liquibase.util                           : Update summary generated
-2026-02-16T11:27:00.620+01:00  INFO 23881 --- [    Test worker] liquibase.command                        : Update command completed successfully.
+2026-02-16T11:30:22.676+01:00  INFO 24464 --- [    Test worker] liquibase.changelog                      : Table task created
+2026-02-16T11:30:22.677+01:00  INFO 24464 --- [    Test worker] liquibase.changelog                      : Sequence task_seq created
+2026-02-16T11:30:22.677+01:00  INFO 24464 --- [    Test worker] liquibase.changelog                      : ChangeSet db/changelog/002-create-task-table.xml::002::testit ran successfully in 4ms
+2026-02-16T11:30:22.681+01:00  INFO 24464 --- [    Test worker] liquibase.util                           : UPDATE SUMMARY
+2026-02-16T11:30:22.681+01:00  INFO 24464 --- [    Test worker] liquibase.util                           : Run:                          2
+2026-02-16T11:30:22.681+01:00  INFO 24464 --- [    Test worker] liquibase.util                           : Previously run:               0
+2026-02-16T11:30:22.681+01:00  INFO 24464 --- [    Test worker] liquibase.util                           : Filtered out:                 0
+2026-02-16T11:30:22.681+01:00  INFO 24464 --- [    Test worker] liquibase.util                           : -------------------------------
+2026-02-16T11:30:22.681+01:00  INFO 24464 --- [    Test worker] liquibase.util                           : Total change sets:            2
+2026-02-16T11:30:22.681+01:00  INFO 24464 --- [    Test worker] liquibase.util                           : Update summary generated
+2026-02-16T11:30:22.682+01:00  INFO 24464 --- [    Test worker] liquibase.command                        : Update command completed successfully.
 Liquibase: Update has been successful. Rows affected: 2
-2026-02-16T11:27:00.622+01:00  INFO 23881 --- [    Test worker] liquibase.lockservice                    : Successfully released change log lock
-2026-02-16T11:27:00.622+01:00  INFO 23881 --- [    Test worker] liquibase.command                        : Command execution complete
-2026-02-16T11:27:00.680+01:00  INFO 23881 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-02-16T11:27:00.713+01:00  INFO 23881 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
-2026-02-16T11:27:00.735+01:00  INFO 23881 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-02-16T11:27:00.874+01:00  INFO 23881 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-02-16T11:27:00.899+01:00  WARN 23881 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-02-16T11:27:01.342+01:00  INFO 23881 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-02-16T11:27:01.360+01:00  INFO 23881 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-02-16T11:27:01.534+01:00  INFO 23881 --- [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-02-16T11:27:01.922+01:00  WARN 23881 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-02-16T11:27:01.982+01:00  INFO 23881 --- [    Test worker] c.e.t.config.BasicAuthSecurityConfig     : !!!!!!!!!! SecurityFilterChain !!!!!!!!!!
-2026-02-16T11:27:02.145+01:00  INFO 23881 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7fa1c05f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6465f4a, org.springframework.security.web.context.SecurityContextHolderFilter@72cec2e2, org.springframework.security.web.header.HeaderWriterFilter@268bb09d, org.springframework.web.filter.CorsFilter@428b5b3f, org.springframework.security.web.authentication.logout.LogoutFilter@438f205c, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@16adf66f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@29a73056, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5b1e336c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@687749d1, org.springframework.security.web.session.SessionManagementFilter@45b244c4, org.springframework.security.web.access.ExceptionTranslationFilter@2a70c8d5, org.springframework.security.web.access.intercept.AuthorizationFilter@1a89d045]
-2026-02-16T11:27:02.317+01:00  INFO 23881 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2026-02-16T11:27:02.374+01:00  INFO 23881 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2026-02-16T11:27:02.374+01:00  INFO 23881 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2026-02-16T11:27:02.376+01:00  INFO 23881 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2026-02-16T11:27:02.395+01:00  INFO 23881 --- [    Test worker] com.example.testit.TaskControllerTest    : Started TaskControllerTest in 3.332 seconds (process running for 3.992)
-2026-02-16T11:27:02.803+01:00 DEBUG 23881 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing POST /tasks
-2026-02-16T11:27:02.807+01:00  WARN 23881 --- [    Test worker] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/tasks' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
-2026-02-16T11:27:02.895+01:00  INFO 23881 --- [    Test worker] c.e.t.config.CustomUserDetailsService    : !!!!!!!!!!!! CA PASSE !!!!!!!!!!!!
-2026-02-16T11:27:03.033+01:00 DEBUG 23881 --- [    Test worker] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
-2026-02-16T11:27:03.033+01:00 DEBUG 23881 --- [    Test worker] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]]
-2026-02-16T11:27:03.035+01:00 DEBUG 23881 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured POST /tasks
-2026-02-16T11:27:03.146+01:00 DEBUG 23881 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing GET /tasks/user/2
-2026-02-16T11:27:03.146+01:00  INFO 23881 --- [    Test worker] c.e.t.config.CustomUserDetailsService    : !!!!!!!!!!!! CA PASSE !!!!!!!!!!!!
-2026-02-16T11:27:03.269+01:00 DEBUG 23881 --- [    Test worker] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
-2026-02-16T11:27:03.270+01:00 DEBUG 23881 --- [    Test worker] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]]
-2026-02-16T11:27:03.270+01:00 DEBUG 23881 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured GET /tasks/user/2
-2026-02-16T11:27:03.321+01:00  INFO 23881 --- [    Test worker] com.example.testit.TaskControllerTest    : !!!!!! TEST !!!!!!!
-2026-02-16T11:27:03.322+01:00 DEBUG 23881 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing GET /tasks
-2026-02-16T11:27:03.322+01:00  INFO 23881 --- [    Test worker] c.e.t.config.CustomUserDetailsService    : !!!!!!!!!!!! CA PASSE !!!!!!!!!!!!
-2026-02-16T11:27:03.434+01:00 DEBUG 23881 --- [    Test worker] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
-2026-02-16T11:27:03.434+01:00 DEBUG 23881 --- [    Test worker] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]]
-2026-02-16T11:27:03.434+01:00 DEBUG 23881 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured GET /tasks
+2026-02-16T11:30:22.684+01:00  INFO 24464 --- [    Test worker] liquibase.lockservice                    : Successfully released change log lock
+2026-02-16T11:30:22.684+01:00  INFO 24464 --- [    Test worker] liquibase.command                        : Command execution complete
+2026-02-16T11:30:22.736+01:00  INFO 24464 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-16T11:30:22.766+01:00  INFO 24464 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2026-02-16T11:30:22.787+01:00  INFO 24464 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-16T11:30:22.912+01:00  INFO 24464 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-16T11:30:22.934+01:00  WARN 24464 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-16T11:30:23.355+01:00  INFO 24464 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-16T11:30:23.371+01:00  INFO 24464 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-16T11:30:23.505+01:00  INFO 24464 --- [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-16T11:30:23.821+01:00  WARN 24464 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-16T11:30:23.874+01:00  INFO 24464 --- [    Test worker] c.e.t.config.BasicAuthSecurityConfig     : !!!!!!!!!! SecurityFilterChain !!!!!!!!!!
+2026-02-16T11:30:24.013+01:00  INFO 24464 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@24f1d4f3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7fa1c05f, org.springframework.security.web.context.SecurityContextHolderFilter@45b244c4, org.springframework.security.web.header.HeaderWriterFilter@7a696a6b, org.springframework.web.filter.CorsFilter@6465f4a, org.springframework.security.web.authentication.logout.LogoutFilter@72216f0b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@49925329, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5c65d5c3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@72cec2e2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@428b5b3f, org.springframework.security.web.session.SessionManagementFilter@29c8a858, org.springframework.security.web.access.ExceptionTranslationFilter@3e6f3ad5, org.springframework.security.web.access.intercept.AuthorizationFilter@13b52853]
+2026-02-16T11:30:24.178+01:00  INFO 24464 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2026-02-16T11:30:24.227+01:00  INFO 24464 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-02-16T11:30:24.227+01:00  INFO 24464 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-02-16T11:30:24.229+01:00  INFO 24464 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-02-16T11:30:24.248+01:00  INFO 24464 --- [    Test worker] com.example.testit.TaskControllerTest    : Started TaskControllerTest in 3.028 seconds (process running for 3.703)
+2026-02-16T11:30:24.679+01:00 DEBUG 24464 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing POST /tasks
+2026-02-16T11:30:24.683+01:00  WARN 24464 --- [    Test worker] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/tasks' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2026-02-16T11:30:24.778+01:00  INFO 24464 --- [    Test worker] c.e.t.config.CustomUserDetailsService    : !!!!!!!!!!!! CA PASSE !!!!!!!!!!!!
+2026-02-16T11:30:24.913+01:00 DEBUG 24464 --- [    Test worker] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2026-02-16T11:30:24.913+01:00 DEBUG 24464 --- [    Test worker] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]]
+2026-02-16T11:30:24.915+01:00 DEBUG 24464 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured POST /tasks
+2026-02-16T11:30:25.007+01:00 DEBUG 24464 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing GET /tasks/user/2
+2026-02-16T11:30:25.008+01:00  INFO 24464 --- [    Test worker] c.e.t.config.CustomUserDetailsService    : !!!!!!!!!!!! CA PASSE !!!!!!!!!!!!
+2026-02-16T11:30:25.128+01:00 DEBUG 24464 --- [    Test worker] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2026-02-16T11:30:25.128+01:00 DEBUG 24464 --- [    Test worker] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]]
+2026-02-16T11:30:25.128+01:00 DEBUG 24464 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured GET /tasks/user/2
+2026-02-16T11:30:25.178+01:00  INFO 24464 --- [    Test worker] com.example.testit.TaskControllerTest    : !!!!!! TEST !!!!!!!
+2026-02-16T11:30:25.179+01:00 DEBUG 24464 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing GET /tasks
+2026-02-16T11:30:25.179+01:00  INFO 24464 --- [    Test worker] c.e.t.config.CustomUserDetailsService    : !!!!!!!!!!!! CA PASSE !!!!!!!!!!!!
+2026-02-16T11:30:25.284+01:00 DEBUG 24464 --- [    Test worker] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2026-02-16T11:30:25.284+01:00 DEBUG 24464 --- [    Test worker] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]]
+2026-02-16T11:30:25.285+01:00 DEBUG 24464 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured GET /tasks
+2026-02-16T11:30:25.297+01:00 DEBUG 24464 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing GET /tasks
+2026-02-16T11:30:25.297+01:00 DEBUG 24464 --- [    Test worker] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16T11:30:25.298+01:00 DEBUG 24464 --- [    Test worker] s.w.a.DelegatingAuthenticationEntryPoint : Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2026-02-16T11:30:25.298+01:00 DEBUG 24464 --- [    Test worker] s.w.a.DelegatingAuthenticationEntryPoint : No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@43d5031b
 </pre>
 </span>
 </div>
@@ -196,7 +205,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 8.14</a> at 16 févr. 2026, 11:27:04</p>
+<a href="https://www.gradle.org">Gradle 8.14</a> at 16 févr. 2026, 11:30:26</p>
 </div>
 </div>
 </body>
