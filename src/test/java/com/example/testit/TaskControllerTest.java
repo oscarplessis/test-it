@@ -45,7 +45,7 @@ class TaskControllerTest {
 
     @Test
     void getAllTasks_shouldReturnEmptyList_initially() throws Exception {
-        mockMvc.perform(get("/tasks"))
+        mockMvc.perform(get("/tasks").header("Authorization", "user:password"))
                 .andExpect(status().isOk())
                 .andExpect(content().json("[]"));
     }
