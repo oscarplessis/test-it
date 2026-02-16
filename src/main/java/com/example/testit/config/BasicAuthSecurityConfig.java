@@ -1,5 +1,7 @@
 package com.example.testit.config;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -17,8 +19,11 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class BasicAuthSecurityConfig {
+    private static final Logger log = LoggerFactory.getLogger(BasicAuthSecurityConfig.class);
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        log.info("!!!!!!!!!! SecurityFilterChain !!!!!!!!!!");
         http.authorizeHttpRequests(
                 (auth)->auth.anyRequest().authenticated()
         )
@@ -28,19 +33,8 @@ public class BasicAuthSecurityConfig {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS));
         return http.build();
     }
-/*
     @Bean
-    public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
-        UserDetails user = User.withUsername("user")
-                .password(passwordEncoder.encode("password"))
-                .build();
-        return  new InMemoryUserDetailsManager(user);
-    }
-
-    @Bean
-    public PasswordEncoder passwordEncoder () {
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
- */
 }

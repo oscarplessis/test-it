@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.testit.TaskServiceIntegrationTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-02-16T09:14:11.862Z" hostname="oscar-Katana-GF66-11UG" time="0.213">
+<testsuite name="com.example.testit.TaskServiceIntegrationTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-02-16T10:27:04.222Z" hostname="oscar-Katana-GF66-11UG" time="0.116">
   <properties/>
-  <testcase name="findByUserId_shouldReturnUserTasks()" classname="com.example.testit.TaskServiceIntegrationTest" time="0.064"/>
-  <testcase name="startTask_shouldFail_whenUserHasMultipleOngoingTasks()" classname="com.example.testit.TaskServiceIntegrationTest" time="0.037"/>
-  <testcase name="startTask_shouldStartTaskAndUpdateDatabase()" classname="com.example.testit.TaskServiceIntegrationTest" time="0.02"/>
-  <testcase name="createTask_shouldCreateTaskInDatabase()" classname="com.example.testit.TaskServiceIntegrationTest" time="0.017"/>
-  <testcase name="finishTask_shouldSendMailToManager_whenManagerExists()" classname="com.example.testit.TaskServiceIntegrationTest" time="0.028"/>
-  <testcase name="startTask_shouldFail_whenTaskNotAssigned()" classname="com.example.testit.TaskServiceIntegrationTest" time="0.018"/>
-  <testcase name="finishTask_shouldFinishTaskAndUpdateDatabase()" classname="com.example.testit.TaskServiceIntegrationTest" time="0.022"/>
-  <system-out><![CDATA[2026-02-16T10:14:11.263+01:00  INFO 15470 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.testit.TaskServiceIntegrationTest]: TaskServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2026-02-16T10:14:11.264+01:00  INFO 15470 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.testit.TestItApplication for test class com.example.testit.TaskServiceIntegrationTest
+  <testcase name="findByUserId_shouldReturnUserTasks()" classname="com.example.testit.TaskServiceIntegrationTest" time="0.037"/>
+  <testcase name="startTask_shouldFail_whenUserHasMultipleOngoingTasks()" classname="com.example.testit.TaskServiceIntegrationTest" time="0.02"/>
+  <testcase name="startTask_shouldStartTaskAndUpdateDatabase()" classname="com.example.testit.TaskServiceIntegrationTest" time="0.011"/>
+  <testcase name="createTask_shouldCreateTaskInDatabase()" classname="com.example.testit.TaskServiceIntegrationTest" time="0.008"/>
+  <testcase name="finishTask_shouldSendMailToManager_whenManagerExists()" classname="com.example.testit.TaskServiceIntegrationTest" time="0.015"/>
+  <testcase name="startTask_shouldFail_whenTaskNotAssigned()" classname="com.example.testit.TaskServiceIntegrationTest" time="0.01"/>
+  <testcase name="finishTask_shouldFinishTaskAndUpdateDatabase()" classname="com.example.testit.TaskServiceIntegrationTest" time="0.013"/>
+  <system-out><![CDATA[2026-02-16T11:27:03.810+01:00  INFO 23881 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.testit.TaskServiceIntegrationTest]: TaskServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-02-16T11:27:03.811+01:00  INFO 23881 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.testit.TestItApplication for test class com.example.testit.TaskServiceIntegrationTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -19,46 +19,47 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.0)
 
-2026-02-16T10:14:11.284+01:00  INFO 15470 --- [    Test worker] c.e.testit.TaskServiceIntegrationTest    : Starting TaskServiceIntegrationTest using Java 21.0.10 with PID 15470 (started by oscar in /home/oscar/Documents/5A/Polytech/fullstack_tests/test-it)
-2026-02-16T10:14:11.284+01:00  INFO 15470 --- [    Test worker] c.e.testit.TaskServiceIntegrationTest    : No active profile set, falling back to 1 default profile: "default"
-2026-02-16T10:14:11.416+01:00  INFO 15470 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-02-16T10:14:11.424+01:00  INFO 15470 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 2 JPA repository interfaces.
-2026-02-16T10:14:11.493+01:00  INFO 15470 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2026-02-16T10:14:11.494+01:00  INFO 15470 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn20: url=jdbc:h2:mem:testdb user=SA
-2026-02-16T10:14:11.495+01:00  INFO 15470 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2026-02-16T10:14:11.496+01:00  INFO 15470 --- [    Test worker] liquibase.database                       : Set default schema name to PUBLIC
-2026-02-16T10:14:11.582+01:00  INFO 15470 --- [    Test worker] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
-2026-02-16T10:14:11.595+01:00  INFO 15470 --- [    Test worker] liquibase.lockservice                    : Successfully acquired change log lock
-2026-02-16T10:14:11.595+01:00  INFO 15470 --- [    Test worker] liquibase.command                        : Using deploymentId: 1233251595
-2026-02-16T10:14:11.596+01:00  INFO 15470 --- [    Test worker] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
-2026-02-16T10:14:11.599+01:00  INFO 15470 --- [    Test worker] liquibase.util                           : UPDATE SUMMARY
-2026-02-16T10:14:11.599+01:00  INFO 15470 --- [    Test worker] liquibase.util                           : Run:                          0
-2026-02-16T10:14:11.600+01:00  INFO 15470 --- [    Test worker] liquibase.util                           : Previously run:               2
-2026-02-16T10:14:11.600+01:00  INFO 15470 --- [    Test worker] liquibase.util                           : Filtered out:                 0
-2026-02-16T10:14:11.600+01:00  INFO 15470 --- [    Test worker] liquibase.util                           : -------------------------------
-2026-02-16T10:14:11.600+01:00  INFO 15470 --- [    Test worker] liquibase.util                           : Total change sets:            2
-2026-02-16T10:14:11.600+01:00  INFO 15470 --- [    Test worker] liquibase.util                           : Update summary generated
-2026-02-16T10:14:11.600+01:00  INFO 15470 --- [    Test worker] liquibase.command                        : Update command completed successfully.
+2026-02-16T11:27:03.824+01:00  INFO 23881 --- [    Test worker] c.e.testit.TaskServiceIntegrationTest    : Starting TaskServiceIntegrationTest using Java 21.0.10 with PID 23881 (started by oscar in /home/oscar/Documents/5A/Polytech/fullstack_tests/test-it)
+2026-02-16T11:27:03.824+01:00  INFO 23881 --- [    Test worker] c.e.testit.TaskServiceIntegrationTest    : No active profile set, falling back to 1 default profile: "default"
+2026-02-16T11:27:03.899+01:00  INFO 23881 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-16T11:27:03.903+01:00  INFO 23881 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 2 JPA repository interfaces.
+2026-02-16T11:27:03.949+01:00  INFO 23881 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-02-16T11:27:03.950+01:00  INFO 23881 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn20: url=jdbc:h2:mem:testdb user=SA
+2026-02-16T11:27:03.950+01:00  INFO 23881 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-02-16T11:27:03.951+01:00  INFO 23881 --- [    Test worker] liquibase.database                       : Set default schema name to PUBLIC
+2026-02-16T11:27:04.012+01:00  INFO 23881 --- [    Test worker] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2026-02-16T11:27:04.021+01:00  INFO 23881 --- [    Test worker] liquibase.lockservice                    : Successfully acquired change log lock
+2026-02-16T11:27:04.021+01:00  INFO 23881 --- [    Test worker] liquibase.command                        : Using deploymentId: 1237624021
+2026-02-16T11:27:04.021+01:00  INFO 23881 --- [    Test worker] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2026-02-16T11:27:04.023+01:00  INFO 23881 --- [    Test worker] liquibase.util                           : UPDATE SUMMARY
+2026-02-16T11:27:04.023+01:00  INFO 23881 --- [    Test worker] liquibase.util                           : Run:                          0
+2026-02-16T11:27:04.023+01:00  INFO 23881 --- [    Test worker] liquibase.util                           : Previously run:               2
+2026-02-16T11:27:04.023+01:00  INFO 23881 --- [    Test worker] liquibase.util                           : Filtered out:                 0
+2026-02-16T11:27:04.023+01:00  INFO 23881 --- [    Test worker] liquibase.util                           : -------------------------------
+2026-02-16T11:27:04.023+01:00  INFO 23881 --- [    Test worker] liquibase.util                           : Total change sets:            2
+2026-02-16T11:27:04.023+01:00  INFO 23881 --- [    Test worker] liquibase.util                           : Update summary generated
+2026-02-16T11:27:04.023+01:00  INFO 23881 --- [    Test worker] liquibase.command                        : Update command completed successfully.
 Liquibase: Update has been successful. Rows affected: 0
-2026-02-16T10:14:11.601+01:00  INFO 15470 --- [    Test worker] liquibase.lockservice                    : Successfully released change log lock
-2026-02-16T10:14:11.602+01:00  INFO 15470 --- [    Test worker] liquibase.command                        : Command execution complete
-2026-02-16T10:14:11.615+01:00  INFO 15470 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-02-16T10:14:11.617+01:00  INFO 15470 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-02-16T10:14:11.618+01:00  INFO 15470 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-02-16T10:14:11.619+01:00  WARN 15470 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-02-16T10:14:11.663+01:00  INFO 15470 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-02-16T10:14:11.665+01:00  INFO 15470 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-02-16T10:14:11.728+01:00  WARN 15470 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-02-16T10:14:11.780+01:00  INFO 15470 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@74d82196, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@21b46d34, org.springframework.security.web.context.SecurityContextHolderFilter@5c8079c5, org.springframework.security.web.header.HeaderWriterFilter@5056e33f, org.springframework.web.filter.CorsFilter@4f8cdeb4, org.springframework.security.web.authentication.logout.LogoutFilter@762aa8d3, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7b6775c8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@220f319a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@452761ff, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f853bb8, org.springframework.security.web.session.SessionManagementFilter@2da82b00, org.springframework.security.web.access.ExceptionTranslationFilter@4c264aed, org.springframework.security.web.access.intercept.AuthorizationFilter@2818d9d7]
-2026-02-16T10:14:11.840+01:00  INFO 15470 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2026-02-16T10:14:11.859+01:00  INFO 15470 --- [    Test worker] c.e.testit.TaskServiceIntegrationTest    : Started TaskServiceIntegrationTest in 0.592 seconds (process running for 7.595)
-2026-02-16T10:14:11.955+01:00  INFO 15470 --- [    Test worker] c.e.testit.adapter.mail.MailServiceFake  : Fake Mail to user1: Tâche commencée - La tâche 'Task 1' a été commencée.
-2026-02-16T10:14:11.981+01:00  INFO 15470 --- [    Test worker] c.e.testit.adapter.mail.MailServiceFake  : Fake Mail to user1: Tâche commencée - La tâche 'Task 1' a été commencée.
-2026-02-16T10:14:12.026+01:00  INFO 15470 --- [    Test worker] c.e.testit.adapter.mail.MailServiceFake  : Fake Mail to user1: Tâche commencée - La tâche 'Task 1' a été commencée.
-2026-02-16T10:14:12.030+01:00  INFO 15470 --- [    Test worker] c.e.testit.adapter.mail.MailServiceFake  : Fake Mail to user1: Tâche terminée - La tâche 'Task 1' a été terminée.
-2026-02-16T10:14:12.031+01:00  INFO 15470 --- [    Test worker] c.e.testit.adapter.mail.MailServiceFake  : Fake Mail to manager: Tâche de votre subordonné terminée - La tâche 'Task 1' assignée à user1 a été terminée.
-2026-02-16T10:14:12.069+01:00  INFO 15470 --- [    Test worker] c.e.testit.adapter.mail.MailServiceFake  : Fake Mail to user1: Tâche commencée - La tâche 'Task 1' a été commencée.
-2026-02-16T10:14:12.072+01:00  INFO 15470 --- [    Test worker] c.e.testit.adapter.mail.MailServiceFake  : Fake Mail to user1: Tâche terminée - La tâche 'Task 1' a été terminée.
+2026-02-16T11:27:04.024+01:00  INFO 23881 --- [    Test worker] liquibase.lockservice                    : Successfully released change log lock
+2026-02-16T11:27:04.024+01:00  INFO 23881 --- [    Test worker] liquibase.command                        : Command execution complete
+2026-02-16T11:27:04.037+01:00  INFO 23881 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-16T11:27:04.038+01:00  INFO 23881 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-16T11:27:04.040+01:00  INFO 23881 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-16T11:27:04.040+01:00  WARN 23881 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-16T11:27:04.066+01:00  INFO 23881 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-16T11:27:04.068+01:00  INFO 23881 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-16T11:27:04.114+01:00  WARN 23881 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-16T11:27:04.120+01:00  INFO 23881 --- [    Test worker] c.e.t.config.BasicAuthSecurityConfig     : !!!!!!!!!! SecurityFilterChain !!!!!!!!!!
+2026-02-16T11:27:04.151+01:00  INFO 23881 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3ad10d56, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@27f7c3e6, org.springframework.security.web.context.SecurityContextHolderFilter@3141db11, org.springframework.security.web.header.HeaderWriterFilter@2539b745, org.springframework.web.filter.CorsFilter@6a5f9cdb, org.springframework.security.web.authentication.logout.LogoutFilter@7fdbab6c, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7f0f104b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@272b4798, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4f405fa7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6dd55493, org.springframework.security.web.session.SessionManagementFilter@47190563, org.springframework.security.web.access.ExceptionTranslationFilter@408aced7, org.springframework.security.web.access.intercept.AuthorizationFilter@7f56567d]
+2026-02-16T11:27:04.200+01:00  INFO 23881 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2026-02-16T11:27:04.220+01:00  INFO 23881 --- [    Test worker] c.e.testit.TaskServiceIntegrationTest    : Started TaskServiceIntegrationTest in 0.407 seconds (process running for 5.817)
+2026-02-16T11:27:04.274+01:00  INFO 23881 --- [    Test worker] c.e.testit.adapter.mail.MailServiceFake  : Fake Mail to user1: Tâche commencée - La tâche 'Task 1' a été commencée.
+2026-02-16T11:27:04.288+01:00  INFO 23881 --- [    Test worker] c.e.testit.adapter.mail.MailServiceFake  : Fake Mail to user1: Tâche commencée - La tâche 'Task 1' a été commencée.
+2026-02-16T11:27:04.311+01:00  INFO 23881 --- [    Test worker] c.e.testit.adapter.mail.MailServiceFake  : Fake Mail to user1: Tâche commencée - La tâche 'Task 1' a été commencée.
+2026-02-16T11:27:04.313+01:00  INFO 23881 --- [    Test worker] c.e.testit.adapter.mail.MailServiceFake  : Fake Mail to user1: Tâche terminée - La tâche 'Task 1' a été terminée.
+2026-02-16T11:27:04.313+01:00  INFO 23881 --- [    Test worker] c.e.testit.adapter.mail.MailServiceFake  : Fake Mail to manager: Tâche de votre subordonné terminée - La tâche 'Task 1' assignée à user1 a été terminée.
+2026-02-16T11:27:04.335+01:00  INFO 23881 --- [    Test worker] c.e.testit.adapter.mail.MailServiceFake  : Fake Mail to user1: Tâche commencée - La tâche 'Task 1' a été commencée.
+2026-02-16T11:27:04.336+01:00  INFO 23881 --- [    Test worker] c.e.testit.adapter.mail.MailServiceFake  : Fake Mail to user1: Tâche terminée - La tâche 'Task 1' a été terminée.
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

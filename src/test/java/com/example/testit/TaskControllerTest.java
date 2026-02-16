@@ -7,6 +7,8 @@ import com.example.testit.model.User;
 import com.example.testit.repository.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,6 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @Transactional
 class TaskControllerTest {
 
+    private static final Logger log = LoggerFactory.getLogger(TaskControllerTest.class);
     @Autowired
     private MockMvc mockMvc;
 
@@ -45,7 +48,8 @@ class TaskControllerTest {
 
     @Test
     void getAllTasks_shouldReturnEmptyList_initially() throws Exception {
-        mockMvc.perform(get("/tasks").header("Authorization", "user:password"))
+        log.info("!!!!!! TEST !!!!!!!");
+        mockMvc.perform(get("/tasks").header("Authorization", "Basic dXNlcjpwYXNzd29yZA=="))
                 .andExpect(status().isOk())
                 .andExpect(content().json("[]"));
     }
@@ -59,7 +63,7 @@ class TaskControllerTest {
             }
             """;
 
-        mockMvc.perform(post("/tasks")
+        mockMvc.perform(post("/tasks").header("Authorization", "Basic dXNlcjpwYXNzd29yZA==")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(taskJson))
                 .andExpect(status().isOk())
@@ -69,7 +73,7 @@ class TaskControllerTest {
 
     @Test
     void getTasksByUser_shouldReturnUserTasks() throws Exception {
-        mockMvc.perform(get("/tasks/user/{userId}", userId))
+        mockMvc.perform(get("/tasks/user/{userId}", userId).header("Authorization", "Basic dXNlcjpwYXNzd29yZA=="))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$").isArray());
     }
