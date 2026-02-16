@@ -61,6 +61,13 @@ class TaskControllerTest {
     }
 
     @Test
+    void shouldReturn401WithWrongPassword() throws Exception {
+        mockMvc.perform(get("/secure").header("Authorization", "Basic dXNlcjpwYXNzda9yZA=="))
+                .andExpect(status().isUnauthorized());
+    }
+
+
+    @Test
     void createTask_shouldCreateTask() throws Exception {
         String taskJson = """
             {
